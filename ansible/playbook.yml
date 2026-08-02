@@ -1,0 +1,21 @@
+---
+- name: Configuración inicial del Homelab
+  hosts: all
+  become: true # Ejecuta los comandos como sudo/root dentro de la VM
+
+  tasks:
+    - name: Actualizar la lista de paquetes (apt update)
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Instalar herramientas esenciales
+      ansible.builtin.apt:
+        name:
+          - curl
+          - git
+          - htop
+        state: present
+
+    - name: Imprimir mensaje de confirmación
+      ansible.builtin.debug:
+        msg: "¡El nodo {{ inventory_hostname }} fue aprovisionado con éxito por Ansible!"
