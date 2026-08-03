@@ -1,0 +1,14 @@
+#acutalizacion de la base del sistema y paquetes 
+- name : Acutalizar cache de APT
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+- name: Instalar herramientas base
+  apt:
+    name: 
+      - curl
+      - wget
+      - git
+      - htop
+      - net-tools
+    state: present
