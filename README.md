@@ -51,14 +51,7 @@ vagrant provision
 
 vagrant destroy -f
 
-Estructura del repositorio 
-.
-├── Vagrantfile          # Configuración de VM, recursos y red
-├── ansible/
-│   └── playbook.yml     # Receta de aprovisionamiento de software
-├── Makefile             # Atajos de comandos para la CLI
-├── .gitignore           # Exclusión de estado local de Vagrant
-└── README.md            # Documentación del proyecto
+
 
 
 Estado del Proyecto & Próximos Pasos
@@ -69,6 +62,6 @@ Estado del Proyecto & Próximos Pasos
 
     [x] Integración de Ansible Provisioner para instalación de herramientas base.
 
-    [ ] Implementación de roles en Ansible para K3s / Docker.
+    [x] Implementación de roles en Ansible para K3s / Docker.
 
-    [ ] Escalado a topología de múltiples nodos (Control Plane + Worker Nodes).
+    [x] Escalado a topología de múltiples nodos (Control Plane + Worker Nodes).
