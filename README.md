@@ -1,8 +1,7 @@
 # local-iac-homelab
 Un entorno de homelab local automatizado basado en **Infrastructure as Code (IaC)**.
 
-[diagrama foto poner host]
-[diagrama de red ]
+<img src="./architecture.png" alt="Arquitectura del Homelab" width="600"/>
 
 Tecnologías Utilizadas
 
@@ -51,7 +50,8 @@ vagrant provision
 
 vagrant destroy -f
 
-
+<!-- Captura de pantalla de la VM -->
+<img src="./img/image.png" alt="Verificación de la VM" width="700"/>
 
 
 Estado del Proyecto & Próximos Pasos
