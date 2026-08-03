@@ -1,1 +1,27 @@
-a
+# Instalacion y configuracion de docker + servicios
+
+- name: Instalar depedencias para docker
+  apt:
+    name: 
+      - ca-certificates
+      - gnupg
+      - lsb-release
+    state: present
+
+- name: Instalar Docker Engine
+  apt: 
+    name: docker.io
+    state: present
+
+- name: Asegurar que el servicio Docker esté iniciado y habilitado
+  systemd:
+    name: docker
+    state: started
+    enable: yes
+
+- name: Agregar el usuario vagrant al grupo docker
+  user : 
+    name : vagrant
+    groups: docker
+    append: yes
+  
