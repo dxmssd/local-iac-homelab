@@ -1,7 +1,6 @@
 - name: Configuración e instalación del Homelab (Docker + K3s)
-  host: all
+  hosts: all
   become: true #ejecutar tareas como root
-
   roles:
     - common
     - docker

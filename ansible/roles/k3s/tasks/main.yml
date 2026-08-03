@@ -1,7 +1,5 @@
-#instalacion de kubernetes 
-
-- name: Verificar si k3s ya esta instalado 
-  command: k8s --version
+- name: Verificar si K3s ya está instalado
+  command: k3s --version
   register: k3s_check
   failed_when: false
   changed_when: false
@@ -10,13 +8,13 @@
   shell: "curl -sfL https://get.k3s.io | sh -"
   when: k3s_check.rc != 0
 
-- name: Asegurar que el servicio K3s este iniciado y habilitado
+- name: Asegurar que el servicio K3s esté iniciado y habilitado
   systemd:
     name: k3s
     state: started
     enabled: yes
 
-- name: Ajustart permisos kubeconfig para el usuario vagrant
+- name: Ajustar permisos de Kubeconfig para el usuario vagrant
   file:
     path: /etc/rancher/k3s/k3s.yaml
     mode: '0644'
